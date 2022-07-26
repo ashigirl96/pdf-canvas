@@ -46,7 +46,7 @@ const PdfPage: VFC = () => {
             console.log('Page loaded')
 
             var scale = 1.5
-            var viewport = page.getViewport({ scale: scale })
+            var viewport = page.getViewport({ scale })
 
             // Prepare canvas using PDF page dimensions
             // var canvas = document.getElementById('the-canvas')

@@ -43,3 +43,5 @@ tmp/
 outDir/
 
 **/*.map
+
+public/*.js

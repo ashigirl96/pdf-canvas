@@ -101,7 +101,7 @@ type DrawPointsOptions = Pick<GlobalPointerOptions, 'canvas'>
 function drawPoints({ canvas }: DrawPointsOptions) {
   const ctx = get2DContext(canvas)
 
-  ctx.lineWidth = 5
+  ctx.lineWidth = 2
 
   ctx.beginPath()
   uniquePoints.forEach((point) => {

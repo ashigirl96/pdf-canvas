@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import {
   initialiseCanvas,
   querySelector,
@@ -7,11 +7,10 @@ import {
   startDrawing,
   stopDrawing,
 } from '../core/pointer'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
-  const [isInitialized, setIsInitialized] = useState(false)
   useEffect(() => {
-    // if (!isInitialized) {
     const container = querySelector<HTMLDivElement>('.container')
     const canvas = querySelector<HTMLCanvasElement>('canvas')
 
@@ -23,7 +22,6 @@ const Home: NextPage = () => {
     canvas.addEventListener('pointerup', (event: PointerEvent) =>
       stopDrawing(event, { canvas }),
     )
-    // }
   })
 
   return (
@@ -44,6 +42,9 @@ const Home: NextPage = () => {
         </p>
         <div className="support"></div>
       </header>
+      <Link href="/pdf">
+        <a>PDF</a>
+      </Link>
       <div className="container">
         <canvas width="400" height="300"></canvas>
       </div>
