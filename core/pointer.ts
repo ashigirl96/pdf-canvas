@@ -60,10 +60,15 @@ export function initialiseCanvas({
   container,
 }: InitializeCanvasOptions) {
   const containerRect = container.getBoundingClientRect()
-  canvas.width = containerRect.width * window.devicePixelRatio
-  canvas.height = containerRect.height * window.devicePixelRatio
-  const ctx = get2DContext(canvas)
-  ctx.scale(window.devicePixelRatio, window.devicePixelRatio)
+  rect = canvas.getBoundingClientRect()
+  // canvas.width = containerRect.width * window.devicePixelRatio
+  // canvas.height = (containerRect.height + 100) * window.devicePixelRatio
+
+  canvas.width = containerRect.width
+  canvas.height = containerRect.height + 100
+
+  // const ctx = get2DContext(canvas)
+  // ctx.scale(window.devicePixelRatio, window.devicePixelRatio)
 }
 
 // type ResetCanvasOptions = Pick<GlobalPointerOptions, 'canvas'>
