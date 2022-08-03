@@ -18,7 +18,7 @@ export function usePen({ canvasRef, containerRef }: UsePen) {
       initialiseCanvas({ canvas, container })
       resetCanvas()
       canvas.addEventListener('pointerdown', (event: PointerEvent) =>
-        startDrawing(event, { canvas }),
+        startDrawing(event, { canvas, container }),
       )
       canvas.addEventListener('pointerup', (event: PointerEvent) =>
         stopDrawing(event, { canvas }),

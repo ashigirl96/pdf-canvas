@@ -1,5 +1,6 @@
 import { useEffect, useRef, VFC } from 'react'
 import { get2DContext } from '../../core/pointer'
+import { CanvasDebugger } from './pointer'
 
 const Component: VFC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -27,7 +28,12 @@ const Component: VFC = () => {
       ctx.stroke()
     }
   })
-  return <canvas ref={canvasRef} width="150" height="150"></canvas>
+  return (
+    <div>
+      <CanvasDebugger canvasRef={canvasRef.current} />
+      <canvas ref={canvasRef} width="150" height="150"></canvas>
+    </div>
+  )
 }
 
 export default Component

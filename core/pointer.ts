@@ -76,11 +76,15 @@ export function resetCanvas() {
   uniquePoints = []
 }
 
-type StartDrawingOptions = Pick<GlobalPointerOptions, 'canvas'>
+type StartDrawingOptions = Pick<GlobalPointerOptions, 'canvas' | 'container'>
 export function startDrawing(
   event: PointerEvent,
-  { canvas }: StartDrawingOptions,
+  { canvas, container }: StartDrawingOptions,
 ) {
+  const containerRect = container.getBoundingClientRect()
+  canvas.style.width = `${containerRect.width}px`
+  canvas.style.height = `${containerRect.height}px`
+
   if (activePointerId || !event.isPrimary) {
     return
   }
