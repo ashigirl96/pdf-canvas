@@ -6,7 +6,8 @@ function Component() {
   usePen({ canvasRef, containerRef })
 
   return (
-    <div className="container" ref={containerRef}>
+    <div className="container" ref={containerRef} style={{ margin: '100px' }}>
+      <div>width: {canvasRef?.current?.width}</div>
       <canvas id="the-canvas" ref={canvasRef}></canvas>
     </div>
   )

@@ -24,7 +24,7 @@ export function useCanvas() {
     if (canvasRef.current) {
       canvasState.current = new CanvasState(canvasRef.current)
     }
-  }, [])
+  }, [canvasRef, canvasState])
 
   return {
     canvasRef,
